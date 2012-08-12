@@ -1,0 +1,5 @@
+(define default-titleblock "Noqsi-title-B.sym")
+
+; Automatic attribute promotion means symbol edits may not take effect
+; in the schematic without extra work, so only promote refdes.
+(always-promote-attributes '("refdes"))

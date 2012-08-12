@@ -6,7 +6,7 @@
 	if(editing) {
 		if( $1 == ".SUBCKT" ) {
 			printf "%s", $0
-			npf = split(db[$2],pf)
+			npf = split(db[toupper($2)],pf)
 			for( i = 2; i <=npf; i += 1) printf " %s", pf[i] 
 			printf "\n"
 		}

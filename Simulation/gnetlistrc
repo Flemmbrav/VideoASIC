@@ -1,0 +1,2 @@
+; We don't want gnetlist to flatten hierarchy
+(hierarchy-traversal "disabled")
