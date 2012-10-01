@@ -19,6 +19,9 @@ on-resistance-test : on-resistance-test.sim
 ../Source/source.inc :
 	cd ../Source; make -q || make
 
+../Models/process.inc :
+	cd ../Models; make -q || make
+
 clean :
 	rm -f *.cir *.sim \#*
 
