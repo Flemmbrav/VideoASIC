@@ -43,8 +43,6 @@ T 200 1300 8 10 1 1 0 0 1
 refdes=X?
 T 300 100 8 8 1 1 0 1 1
 device=DPST-NC
-T 200 1500 8 10 0 0 0 0 1
-file=../Source/DPST-NC.cir
 T 700 1300 8 10 0 0 0 0 1
 model-name=DPST-NC
 P 200 300 0 300 1 0 1

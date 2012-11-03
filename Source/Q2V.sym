@@ -29,8 +29,6 @@ pinlabel=Out2
 }
 T 300 1000 8 10 1 1 0 0 1
 refdes=X?
-T 600 1000 8 10 0 0 0 0 1
-file=Components/NoqsiIP/Q2V.cir
 T 600 1200 8 10 0 0 0 0 1
 model-name=Q2V
 P 1100 700 700 700 1 0 0
@@ -66,3 +64,9 @@ pintype=in
 T 500 300 5 6 1 1 0 4 1
 pinlabel=~R
 }
+T 600 1600 8 10 0 0 0 0 1
+common=Vdd Vss
+T 600 1400 8 10 0 0 0 0 1
+spice-prototype=X? %pinseq common@ model-name@
+T 600 1800 8 10 0 0 0 0 1
+source=Q2V.sch

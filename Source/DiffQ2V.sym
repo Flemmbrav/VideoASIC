@@ -70,3 +70,13 @@ pinseq=6
 }
 T 300 600 8 10 1 1 0 0 1
 device=DiffQ2V
+T 100 1300 8 10 1 1 0 0 1
+refdes=X?
+T 600 1400 8 10 0 0 0 0 1
+source=DiffQ2V.sch
+T 600 1800 8 10 0 0 0 0 1
+common=Vdd Vss
+T 600 1600 8 10 0 0 0 0 1
+spice-prototype=X? %pinseq common@ model-name@
+T 600 2000 8 10 0 0 0 0 1
+model-name=DiffQ2V

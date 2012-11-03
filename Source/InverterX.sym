@@ -30,11 +30,13 @@ pinlabel=Y
 }
 T 200 700 8 10 1 1 0 0 1
 refdes=X?
-T 600 900 8 10 0 0 0 0 1
-file=InverterX.cir
 T 600 1100 8 10 0 0 0 0 1
 model-name=InverterX
 T 400 300 9 10 1 0 0 1 1
 X
 T 600 1300 8 10 0 0 0 0 1
 source=InverterX.sch
+T 600 1700 8 10 0 0 0 0 1
+common=Vdd Vss
+T 600 1500 8 10 0 0 0 0 1
+spice-prototype=X? %pinseq common@ model-name@

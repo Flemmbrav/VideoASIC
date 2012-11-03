@@ -11,8 +11,14 @@ SPICE=ngspice
 %.sim : %.cir $(INFRA)
 	cat $^ >$@
 
+InverterXgm : InverterXgm.sim
+	$(SPICE) InverterXgm.sim
+
 on-resistance-test : on-resistance-test.sim
 	$(SPICE) on-resistance-test.sim
+
+InverterXac : InverterXac.sim
+	$(SPICE) InverterXac.sim
 
 .PHONY : ../Source/source.inc
 
