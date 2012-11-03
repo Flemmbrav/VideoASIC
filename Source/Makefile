@@ -1,4 +1,4 @@
-CIR=CMS.cir DPST-NC.cir InverterX.cir Pump.cir Q2V.cir 
+CIR=CMS.cir DPST-NC.cir InverterX.cir Pump.cir Q2V.cir DiffQ2V.cir
 	
 
 GNET=gnetlist -g spice-noqsi -o $@

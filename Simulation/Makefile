@@ -1,4 +1,4 @@
-INFRA=../Models/process.inc ../OpenIP/openIP-noglobals.inc \
+INFRA= process.inc ../OpenIP/openIP-noglobals.inc \
  ../Source/source.inc SimPwr.cir
 GNET=gnetlist -g spice-noqsi -o $@
 PP=../Scripts/spicepp.pl
@@ -9,7 +9,7 @@ SPICE=ngspice
 	$(GNET) $<
 
 %.sim : %.cir $(INFRA)
-	cat $^ >$@
+	cat $^ | ../Scripts/spicepp.pl >$@
 
 InverterXgm : InverterXgm.sim
 	$(SPICE) InverterXgm.sim
