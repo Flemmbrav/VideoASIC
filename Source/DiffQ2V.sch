@@ -1,4 +1,4 @@
-v 20110115 2
+v 20111231 2
 C 40200 40400 0 0 0 Noqsi-title-B.sym
 {
 T 50200 40900 5 10 1 1 0 0 1
@@ -76,4 +76,13 @@ T 52300 45200 5 10 1 1 0 0 1
 device=DiffQ2V
 T 52600 45400 5 10 0 0 0 0 1
 graphical=1
+}
+C 44400 49600 1 0 0 subcircuit.sym
+{
+T 44500 49900 5 10 1 1 0 0 1
+refdes=A1
+T 44500 49600 5 10 1 1 0 0 1
+model-name=DiffQ2V
+T 44400 49400 5 10 1 0 0 0 1
+common=Vdd Vss
 }
