@@ -3,6 +3,7 @@ INFRA= process.inc ../OpenIP/openIP-noglobals.inc \
 GNET=gnetlist -g spice-noqsi -o $@
 PP=../Scripts/spicepp.pl
 SPICE=ngspice-noqsi
+ISPICE=rlwrap $(SPICE)
 
 
 %.cir : %.sch 
@@ -12,13 +13,13 @@ SPICE=ngspice-noqsi
 	echo '*' $@ | cat - $^ | ../Scripts/spicepp.pl >$@
 
 InverterXgm : InverterXgm.sim
-	$(SPICE) InverterXgm.sim
+	$(ISPICE) InverterXgm.sim
 
 on-resistance-test : on-resistance-test.sim
-	$(SPICE) on-resistance-test.sim
+	$(ISPICE) on-resistance-test.sim
 
 InverterXac : InverterXac.sim
-	$(SPICE) InverterXac.sim
+	$(ISPICE) InverterXac.sim
 
 .PHONY : ../Source/source.inc
 
