@@ -12,6 +12,9 @@ ISPICE=rlwrap $(SPICE)
 %.sim : %.cir $(INFRA)
 	echo '*' $@ | cat - $^ | ../Scripts/spicepp.pl >$@
 
+Igm : Igm.sim
+	$(ISPICE) Igm.sim
+
 InverterXgm : InverterXgm.sim
 	$(ISPICE) InverterXgm.sim
 
