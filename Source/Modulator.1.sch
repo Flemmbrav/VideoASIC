@@ -1,23 +1,18 @@
-v 20110115 2
+v 20111231 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=?
+date=20121127
 T 53900 40500 5 10 1 1 0 0 1
-rev=0.0
+rev=1.0
 T 53900 40200 5 10 1 1 0 0 1
 auth=jpd
 T 53200 40900 5 14 1 1 0 4 1
-title=Second Order Switched-Capacitor Filter
+title=Delta-Sigma Modulator
 T 50500 40200 5 10 1 1 0 0 1
 page=1
 T 51900 40200 5 10 1 1 0 0 1
 pages=3
-}
-C 51700 42500 1 0 0 Pump.sym
-{
-T 52000 44200 5 10 1 1 0 0 1
-refdes=XG1
 }
 C 45400 45500 1 0 0 DiffQ2V.sym
 {
@@ -91,22 +86,22 @@ netname=midm
 C 41500 48900 1 0 1 io.sym
 {
 T 40650 49150 5 10 1 1 0 6 1
-refdes=P?
+refdes=P1
 }
 C 41500 48300 1 0 1 io.sym
 {
 T 40650 48550 5 10 1 1 0 6 1
-refdes=P?
+refdes=P2
 }
 C 41500 43400 1 0 1 io.sym
 {
 T 40650 43650 5 10 1 1 0 6 1
-refdes=P?
+refdes=P3
 }
 C 41500 42800 1 0 1 io.sym
 {
 T 40650 43050 5 10 1 1 0 6 1
-refdes=P?
+refdes=P4
 }
 N 41300 49200 42300 49200 4
 {
@@ -157,7 +152,7 @@ C 47000 45200 1 0 0 V2Q.sym
 T 47300 46900 5 10 1 1 0 0 1
 refdes=XC1
 T 49100 46600 5 10 1 1 0 0 1
-model-name=C1
+model-name=C123
 }
 N 53900 43100 55200 43100 4
 C 43200 49800 1 0 0 Vm.sym
@@ -208,7 +203,19 @@ N 41300 43700 42300 43700 4
 T 41400 43800 5 10 1 1 0 0 1
 netname=ref+
 }
-C 52700 41800 1 0 0 Cbar.sym
-N 53100 41900 53100 42500 4
-C 52900 42500 1 180 0 Vdd.sym
-C 51900 42400 1 0 0 C.sym
+C 51700 42500 1 0 0 G1.sym
+{
+T 52000 44200 5 10 1 1 0 0 1
+refdes=XG1
+}
+C 52400 42400 1 0 0 Cbar.sym
+C 52600 44300 1 0 0 Vm.sym
+C 54500 44900 1 0 0 Modulator.sym
+{
+T 54900 45800 5 10 1 1 0 1 1
+device=Modulator
+T 54700 46600 5 10 1 1 0 0 1
+refdes=X?
+T 55500 45600 5 10 0 0 0 0 1
+graphical=1
+}

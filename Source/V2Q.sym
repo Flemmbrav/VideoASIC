@@ -1,4 +1,4 @@
-v 20110115 2
+v 20111231 2
 P 200 1200 0 1200 1 0 1
 {
 T 175 1225 5 8 0 1 0 6 1
@@ -24,9 +24,9 @@ pintype=in
 T 300 1700 8 10 1 1 0 0 1
 refdes=X?
 T 400 2800 8 8 0 1 0 1 1
-device=Pump
+device=V2Q
 T 700 2300 8 10 0 0 0 0 1
-model-name=Pump
+model-name=V2Q
 B 200 200 1800 1400 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 L 1000 1200 200 1200 3 0 0 0 -1 -1
 L 1200 1200 2000 1200 3 0 0 0 -1 -1
@@ -104,3 +104,9 @@ pinseq=8
 T 1125 1700 5 8 0 1 180 8 1
 pintype=pas
 }
+T 800 2100 8 10 0 0 0 0 1
+source=V2Q.sch
+T 1300 2800 8 10 0 0 0 0 1
+common=Vdd Vss
+T 1300 2600 8 10 0 0 0 0 1
+spice-prototype=X? %pinseq common@ model-name@
