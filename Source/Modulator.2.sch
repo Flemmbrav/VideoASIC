@@ -89,14 +89,14 @@ model-name=K4
 C 42300 42500 1 0 0 V2Q.sym
 {
 T 42600 44200 5 10 1 1 0 0 1
-refdes=XK1
+refdes=XK3
 T 44400 43900 5 10 1 1 0 0 1
 model-name=K3
 }
 C 47000 42500 1 0 0 V2Q.sym
 {
 T 47300 44200 5 10 1 1 0 0 1
-refdes=XK2
+refdes=XK4
 T 49100 43900 5 10 1 1 0 0 1
 model-name=K4
 }
