@@ -23,5 +23,5 @@ Modulator.cir : Modulator.1.sch Modulator.2.sch Modulator.3.sch
 	$(GNET) $^
 
 clean :
-	rm -f *.cir source.inc
+	rm -f *.cir source.inc *.sch~ *.sym~ 
 
