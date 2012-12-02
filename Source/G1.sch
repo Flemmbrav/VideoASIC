@@ -204,3 +204,12 @@ refdes=X?
 T 42600 40600 5 10 0 0 0 0 1
 graphical=1
 }
+C 41100 50100 1 0 0 subcircuit.sym
+{
+T 41200 50400 5 10 1 1 0 0 1
+refdes=A1
+T 41900 50100 5 10 1 1 0 0 1
+model-name=G1
+T 41200 49900 5 10 1 0 0 0 1
+common=Vdd Vss
+}

@@ -1,5 +1,5 @@
 CIR=CMS.cir DPST-NC.cir InverterX.cir Pump.cir Q2V.cir DiffQ2V.cir \
-	Comparator.cir CJK.cir G1.cir G2.cir Modulator.cir
+	Comparator.cir CJK.cir G1.cir G2.cir Modulator.cir UnBal.cir
 	
 
 GNET=gnetlist -g spice-noqsi -o $@
