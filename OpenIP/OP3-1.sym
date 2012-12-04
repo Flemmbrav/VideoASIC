@@ -81,5 +81,5 @@ pinnumber=5
 T 1000 200 5 10 0 0 0 0 1
 pinseq=5
 }
-T 0 0 0 0 0 0 0 0 1
+T 0 0 8 10 0 0 0 0 1
 spice-prototype=X? %pinseq VDD VSS model-name@

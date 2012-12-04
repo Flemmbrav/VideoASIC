@@ -1,0 +1,60 @@
+v 20111231 2
+B 200 0 1300 600 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+P 400 800 400 600 1 0 0
+{
+T 400 800 5 10 0 0 0 0 1
+pintype=unknown
+T 400 500 5 10 1 1 180 4 1
+pinlabel=Cb
+T 350 695 5 10 0 1 90 0 1
+pinnumber=2
+T 400 800 5 10 0 0 0 0 1
+pinseq=2
+}
+P 1300 800 1300 600 1 0 0
+{
+T 1300 800 5 10 0 0 0 0 1
+pintype=unknown
+T 1300 500 5 10 1 1 180 4 1
+pinlabel=Ct
+T 1250 695 5 10 0 1 90 0 1
+pinnumber=3
+T 1300 800 5 10 0 0 0 0 1
+pinseq=3
+}
+P 0 200 200 200 1 0 0
+{
+T 0 200 5 10 0 0 0 6 1
+pintype=unknown
+T 255 195 5 10 1 1 0 1 1
+pinlabel=Vin
+T 105 245 5 10 0 1 0 6 1
+pinnumber=1
+T 0 200 5 10 0 0 0 6 1
+pinseq=1
+}
+P 1700 200 1500 200 1 0 0
+{
+T 1700 200 5 10 0 0 0 0 1
+pintype=unknown
+T 1445 195 5 10 1 1 0 7 1
+pinlabel=Qout
+T 1595 245 5 10 0 1 0 0 1
+pinnumber=4
+T 1700 200 5 10 0 0 0 0 1
+pinseq=4
+}
+T 400 1100 5 10 0 0 0 0 1
+common=Ph1 Ph2 Vm Vdd Vss
+T 400 1300 5 10 0 0 0 0 1
+model-name=V2Qd
+T 400 1500 8 10 0 0 0 0 1
+spice-prototype=X? %pinseq common@ model-name@
+T 400 1900 8 10 0 0 0 0 1
+source=V2Qd.sch
+T 600 200 9 10 1 0 0 0 1
+-Z
+T 800 300 9 10 1 0 0 0 1
+-1
+T 1400 700 8 10 1 1 0 0 1
+refdes=X?
