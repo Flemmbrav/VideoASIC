@@ -8,7 +8,7 @@ rev=1.0
 T 17500 78800 15 10 1 1 0 0 1
 auth=jpd
 T 15300 79500 15 14 1 1 0 4 1
-title=Double Charge Amplifier
+title=Charge Amplifier
 }
 C 7700 82300 1 0 0 capacitor-a.sym
 {

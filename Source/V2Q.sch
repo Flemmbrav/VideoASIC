@@ -2,13 +2,13 @@ v 20121123 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=?
+date=20121204
 T 53900 40500 5 10 1 1 0 0 1
-rev=0.0
+rev=1.0
 T 53900 40200 5 10 1 1 0 0 1
 auth=jpd
 T 53200 40900 5 14 1 1 0 4 1
-title=TITLE
+title=Delay-free Charge Input (chopped)
 T 50500 40200 5 10 1 1 0 0 1
 page=1
 T 51900 40200 5 10 1 1 0 0 1
