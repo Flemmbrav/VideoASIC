@@ -15,7 +15,7 @@ C 7700 82300 1 0 0 capacitor-a.sym
 T 7900 82800 5 10 1 1 0 0 1
 refdes=C1
 T 7900 82100 5 10 1 1 0 0 1
-value=232fF
+value=190fF
 }
 N 8600 81400 8600 84300 4
 N 8600 81400 10000 81400 4
@@ -76,4 +76,4 @@ C 7800 83300 1 0 0 Vss.sym
 N 7900 83600 7900 84200 4
 C 7500 84800 1 0 0 R.sym
 T 9000 82400 9 10 1 0 0 0 1
-Note: C1 tuned to make effective capacitance 250fF.
+Note: C1 tuned to make effective capacitance 200fF.
