@@ -33,5 +33,5 @@ InverterXac : InverterXac.sim
 	cd ../Models; make -q || make
 
 clean :
-	rm -f *.cir *.sim \#*
+	rm -f *.cir *.sim \#* *~
 
