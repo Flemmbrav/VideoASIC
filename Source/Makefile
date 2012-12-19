@@ -1,5 +1,5 @@
-CIR= InverterX.cir Q2V.cir ClockGen.cir \
-	Comparator.cir Polarity.cir Modulator.cir
+CIR= InverterX.cir Q2V.cir ClockGen.cir V2Q.cir \
+	Comparator.cir Polarity.cir Modulator.cir Filter.cir
 	
 
 GNET=gnetlist -g spice-noqsi -o $@
