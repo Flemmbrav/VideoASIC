@@ -1,4 +1,4 @@
-CIR= InverterX.cir Q2V.cir ClockGen.cir V2Q.cir \
+CIR= InverterX.cir Q2V.cir ClockGen.cir V2Q.cir QOP.cir \
 	Comparator.cir Polarity.cir Modulator.cir Filter.cir
 	
 
