@@ -2,14 +2,12 @@ v 20110115 2
 C 700 78300 0 0 0 Noqsi-title-B.sym
 {
 T 10700 78800 5 10 1 1 0 0 1
-date=$Date: 2008-06-07 22:46:15 $
+date=20121219
 T 14600 78800 5 10 1 1 0 0 1
-rev=$Revision: 1.16 $
+rev=1.0
 T 16100 78500 5 10 1 1 0 0 1
-auth=$Author: jpd $
-T 10900 79100 5 8 1 1 0 0 1
-fname=$Source: /cvs/Osaka/DeltaSigmaChip/Schematic/Components/NoqsiIP/Preamplifier.sch,v $
-T 13900 79500 5 14 1 1 0 4 1
+auth=jpd
+T 13900 79200 5 14 1 1 0 4 1
 title=Preamplifier
 }
 C 6400 84000 1 0 0 capacitor-a.sym
@@ -85,20 +83,15 @@ C 4600 85300 1 0 1 io.sym
 T 3750 85550 5 10 1 1 0 6 1
 refdes=P2
 }
-C 4600 83200 1 0 1 io.sym
-{
-T 3750 83450 5 10 1 1 0 6 1
-refdes=P5
-}
 C 4600 80100 1 0 1 io.sym
 {
 T 3750 80350 5 10 1 1 0 6 1
-refdes=P6
+refdes=P4
 }
 C 4600 81700 1 0 1 io.sym
 {
 T 3750 81950 5 10 1 1 0 6 1
-refdes=P7
+refdes=P5
 }
 N 4400 80400 8500 80400 4
 {
@@ -110,8 +103,8 @@ N 5000 81600 5000 81000 4
 N 5000 81000 8000 81000 4
 N 8000 81000 8000 84200 4
 {
-T 7500 82800 5 10 1 1 0 0 1
-netname=Vout
+T 7600 84300 5 10 1 1 0 0 1
+netname=preout
 }
 C 8700 85200 1 0 1 capacitor-a.sym
 {
@@ -127,11 +120,6 @@ device=Q2V
 T 10100 85900 5 10 1 1 0 0 1
 refdes=X2
 }
-N 4400 83500 10300 83500 4
-{
-T 4600 83600 5 10 1 1 0 0 1
-netname=~Reset
-}
 C 8600 88400 1 0 1 capacitor-a.sym
 {
 T 8400 88900 5 10 1 1 0 6 1
@@ -144,12 +132,12 @@ N 9800 88600 8600 88600 4
 N 7700 88600 4400 88600 4
 {
 T 4600 88700 5 10 1 1 0 0 1
-netname=C+
+netname=Cmp
 }
 C 4600 88300 1 0 1 io.sym
 {
 T 3750 88550 5 10 1 1 0 6 1
-refdes=P9
+refdes=P6
 }
 N 6400 85600 5700 85600 4
 C 5700 84000 1 0 1 capacitor-a.sym
