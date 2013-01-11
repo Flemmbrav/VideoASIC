@@ -45,3 +45,5 @@ pinnumber=2
 T 0 100 5 10 0 0 0 6 1
 pinseq=2
 }
+T 400 1500 8 10 0 0 0 0 1
+device=who-cares
