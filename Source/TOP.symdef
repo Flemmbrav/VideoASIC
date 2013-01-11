@@ -1,8 +1,20 @@
+[labels]
+refdes=U?
+Video ASIC
+! copyright=2013 John P. Doty
+! author=jpd@noqsi.com
+! uselicense=unlimited
+! distlicense=GPL
+! device=TOP
+! description=Quad CCD Video Chain
+! footprint=QFP80
+! spice-prototype=X? %pinseq model-name@
+! model-name=TOP
 [left]
 1	VSS1
-2	PVSS1
+2	VSS1
 3	VSS0
-4	PVSS0
+4	VSS0
 5	VSS
 6	VDD
 7	Ref
@@ -15,15 +27,15 @@
 14	I2m
 15	I3p
 16	I3m
-17	PVDDE
+17	VDDE
 18	VDDE
-19	PVDD
+19	VDD
 20	VDD
-[bottom]
+
 21	VSS
-22	PVSS
+22	VSS
 23	VSSE
-24	PVSSE
+24	VSSE
 25	VSS
 26	T3
 27	VSS
@@ -35,12 +47,12 @@
 33	NC
 34	Termb
 35	NC
-36	NC
-37	NC
+36	VL
+37	VH
 38	NC
 39	VDD
 40	VSS
-[right]
+
 41	VSS1
 42	VDD1
 43	NC
@@ -61,7 +73,7 @@
 58	Bp0
 59	VDD1
 60	VSS1
-[top]
+
 61	LVH
 62	Intm
 63	Intp
@@ -78,7 +90,7 @@
 74	Dload
 75	Dout
 76	Din
-77	PVDD0
+77	VDD0
 78	VDD0
-79	PVDD1
+79	VDD1
 80	VDD1

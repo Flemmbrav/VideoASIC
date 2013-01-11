@@ -123,7 +123,7 @@ C 7400 83400 1 0 0 subcircuit.sym
 T 7500 83700 5 10 1 1 0 0 1
 refdes=A1
 T 8200 83400 5 10 1 1 0 0 1
-model-name=Q2V
+model-name=DACbit
 T 7500 83200 5 10 1 0 0 0 1
 common=Vdd1 Vss1 Vdd Vss
 }
