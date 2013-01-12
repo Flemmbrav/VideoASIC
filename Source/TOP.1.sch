@@ -436,3 +436,10 @@ netname=LVH
 N 44100 40500 44100 41000 4
 T 49400 41300 9 20 1 0 0 0 1
 Power and Bias Inputs
+C 48800 46200 1 0 0 subcircuit.sym
+{
+T 48900 46500 5 10 1 1 0 0 1
+refdes=A1
+T 48900 46200 5 10 1 1 0 0 1
+model-name=TOP
+}

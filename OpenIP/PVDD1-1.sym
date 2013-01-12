@@ -1,4 +1,4 @@
-v 20080127 1
+v 20110115 2
 B 200 0 800 800 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 T 600 400 9 10 1 1 0 4 1
 PVDD1
@@ -49,4 +49,4 @@ dist-license=GPL
 T 0 0 8 10 0 0 0 0 1
 use-license=unlimited
 T 0 0 8 10 0 0 0 0 1
-spice-prototype=X? %pinseq model-name@
+spice-prototype=X? %pinseq VSS0 VSS model-name@
