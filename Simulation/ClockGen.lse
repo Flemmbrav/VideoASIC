@@ -1,0 +1,86 @@
+# $Id: ClockGen.lse,v 1.1 2006/02/04 05:21:12 jpd Exp $
+
+variables: frequency risefall 0level 1level step
+1 step !
+
+# set voltage levels for zero and one
+# zero one high levels yields nothing
+levels : 1level ! 0level !
+
+# output name and connections for a voltage source
+# name =source yields nothing
+=source : char V put dup ,t sp ,t sp  0 , sp
+
+# Output logic 1 or zero voltage
+# =1 yields nothing
+# =0 ditto
+=1 : 1level @ ,. sp
+=0 : 0level @ ,. sp
+
+# generate start of pulse command
+# =pulse( yields nothing
+=pulse( : " pulse(" ,t =0 =1
+
+# output time of 1/2 cycle minus transition time
+# =pw/2 yields nothing
+=pw/2 : 0.5 frequency @ /. risefall @ -. ,. sp
+
+# output rise/fall time
+# =rf yields nothing
+=rf : risefall @ ,. sp
+
+# output pulse period
+# =per yields nothing
+=per : 1.0 frequency @ /. ,. sp
+
+# output a closing )
+# =) yields nothing
+=) : char ) put
+
+# Make master clock
+# name clock yields nothing
+clock : =source =pulse( =pw/2 =rf =rf =pw/2 =per =) nl
+
+# Generate initial reset
+# name reset yields nothing
+reset : =source =pulse( =per =rf =) nl
+
+# compute time of current step
+# (now) yields time
+(now) : step @ float frequency @ /.
+
+# Generate current time
+# =now yields nothing
+=now : (now) ,. sp
+
+# Generate current time plus rise/fall time
+# =now+ yields nothing
+=now+ : (now) risefall @ +. ,. sp
+
+# Move time forward one step
+# cycle yields nothing
+cycle : step @ 1 + step !
+
+# =pwl( yields nothing
+=pwl( : " pwl(" ,t
+
+# Start a PWL for a bit sequence
+# name sequence{ yields nothing
+sequence{ : =source =pwl( 0 , sp =0 =now =0
+
+=bit : =now+ =1 cycle =now =1
+=bit : then =now+ =0 cycle =now =0
+=lsb : nl char + put sp dup 2 / swap 1 & 0= =bit
+bits : =lsb iterate 0= || error( " Not enough bits for value" ,t nl )error
+
+}sequence : =) nl
+
+# Generate a pulse at the current cycle
+# name pulse yields nothing
+pulse : sequence{ =now+ =1 cycle =now =1 =now+ =0 =) nl
+
+# $Log: ClockGen.lse,v $
+# Revision 1.1  2006/02/04 05:21:12  jpd
+# Feedthrough compensation DAC
+# Less trouble getting operating point
+#

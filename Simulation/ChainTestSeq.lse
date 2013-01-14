@@ -1,0 +1,101 @@
+
+1e-9 seqrisefall :constant
+2e-8 cycletime :constant
+50 initcycles :constant
+24 rcycles :constant
+1 ccycles :constant
+12 icycles :constant
+1 pixels :constant
+0.0 vbase :constant
+0.04 vreset :constant
+0.0 vidstart :constant
+0.0 vidend :constant
+0 compdac :constant
+0 atten :constant
+
+" * Test signals for Delta Sigma chain" ,t nl
+" * seqrisefall = " ,t seqrisefall ,. nl
+" * cycletime = " ,t cycletime ,. nl
+" * initcycles = " ,t initcycles , nl
+" * rcycles = " ,t rcycles , nl
+" * ccycles = " ,t ccycles , nl
+" * icycles = " ,t icycles , nl
+" * pixels = " ,t pixels , nl
+" * vidstart = " ,t vidstart ,. nl
+" * vidend = " ,t vidend ,. nl
+" * compdac = " ,t compdac , nl
+" * atten = " ,t atten , nl
+
+# First, make the DAC setup signals
+# Use the ClockGen.lse words for these
+
+" ClockGen.lse" load
+
+# Parameters for serial data interface
+
+1e7 frequency !
+1e-8 risefall !
+0.0 3.3 levels
+
+# Standard stuff
+
+" dclk" clock
+" rb" reset
+
+# Test value for register
+
+" Din" sequence{
+atten 4 bits
+compdac 5 bits
+}sequence
+
+# Load the register
+
+" dload" pulse
+
+# Now for the video signals and clocks
+# These use the Seq.lse pseudo sequencer
+
+" Seq.lse" load
+
+# Derived constant
+vidend vidstart -. pixels float /. vidstep :constant
+
+variables: vidpix
+vidstart vidpix !
+
+cclk :		0 bit
+# odd :		1 bit
+clampb :	2 bit
+int :		3 bit
+deint :		4 bit
+	
+cycle : step cclk high step cclk low
+
+# Set video levels
+-reset : vreset vidlev !
+-base : vbase vidlev !
+-pix : vidpix @ dup vidlev ! vidstep +. vidpix !
+
+reset : -reset rcycles cycle iterate -base
+clamp : clampb low ccycles cycle iterate clampb high
+deintegrate : deint high icycles cycle iterate deint low
+integrate : -pix int high icycles cycle iterate int low
+
+pix : reset clamp deintegrate integrate
+
+seqrisefall cycletime 2. /. seqinit
+initcycles cycle iterate pixels pix iterate pix
+
+" Vcclk cclk 0 " ,t cclk =pwl
+" Vclampb clampb 0 " ,t clampb =pwl
+" Vint int 0 " ,t int =pwl
+" Vdeint deint 0 " ,t deint =pwl
+
+" Video im 0 " ,t =vid
+
+" .TRAN " ,t cycletime 4. /. ,. sp t @ ,. nl
+# " .TRAN " ,t cycletime 4. /. ,. sp t @ ,. sp " UIC" ,t nl
+# " .TRAN " ,t cycletime 4. /. ,. sp 1e-8 ,. nl
+
+bye

@@ -32,6 +32,9 @@ InverterXac : InverterXac.sim
 ../Models/process.inc :
 	cd ../Models; make -q || make
 
+ChainTestSeq.stim : ChainTestSeq.lse ClockGen.lse Seq.lse
+	lse64 ChainTestSeq.lse > $@
+
 clean :
 	rm -f *.cir *.sim \#* *~
 
