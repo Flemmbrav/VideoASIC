@@ -111,7 +111,7 @@ C 8700 85200 1 0 1 capacitor-a.sym
 T 8500 85700 5 10 1 1 0 6 1
 refdes=C6
 T 8100 85200 5 10 1 1 0 6 1
-value=3.6pF
+value=2pF
 }
 C 9800 84900 1 0 0 Q2V.sym
 {
