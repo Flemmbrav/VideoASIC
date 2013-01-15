@@ -41,9 +41,11 @@ T 500 700 8 10 1 1 0 0 1
 refdes=X?
 T 26 1000 8 10 0 0 0 0 1
 model-name=Comparator
-T 400 300 9 6 1 0 0 2 1
-VL
+T 500 300 9 6 1 0 0 4 1
+Vm
 T 0 1200 8 10 0 0 0 0 1
 spice-prototype=X? %pinseq common@ model-name@
 T 0 1400 8 10 0 0 0 0 1
-common=Vdd Vss
+common=Vdd1 Vss1 Vdd Vss
+T 100 1700 8 10 0 0 0 0 1
+source=Comparator.sch

@@ -1,7 +1,7 @@
 CIR= InverterX.cir Q2V.cir ClockGen.cir V2Q.cir QOP.cir \
 	Comparator.cir Polarity.cir Modulator.cir Filter.cir \
 	CRbit.cir DACbit.cir PumpDAC.cir Preamplifier.cir DPST-NC.cir \
-	Bias10uA.cir Chain.cir SwitchableTerminator.cir LVRP.cir LVDD.cir \
+	Bias10uA.cir Chain.cir SwitchableTerminator.cir LVRP.cir LVDD.ckt \
 	Sync.cir TOP.cir
 
 PS= InverterX.ps Q2V.ps ClockGen.ps V2Q.ps QOP.ps \
@@ -27,8 +27,8 @@ S2PS=gschem -p -o $@ -s print.scm $<
 
 # And definitions to assemble the documentation
 
-PAPER=letter
-#PAPER=a4
+#PAPER=letter
+PAPER=a4
 
 A2PS=a2ps -1 --medium=$(PAPER) --toc -o $@ $^
 PS2PDF=ps2pdf -sPAPERSIZE=$(PAPER)
@@ -37,7 +37,7 @@ PS2PDF=ps2pdf -sPAPERSIZE=$(PAPER)
 	$(PS2PDF) $<
 
 source.inc : $(CIR)
-	cat $(CIR) >source.inc
+	cat $(CIR) | grep -v '^\*' >source.inc
 
 Preamplifier.cir : Preamplifier.sch Preamplifier-gain.sch
 	$(GNET) Preamplifier.sch Preamplifier-gain.sch
